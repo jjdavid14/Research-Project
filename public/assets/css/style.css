@@ -7,6 +7,9 @@
  input {
      font-size: 12px;
 }
+#main {
+    height: 500px;
+}
  .full-map {
      top:0px;
      height: 500px;
@@ -27,7 +30,7 @@
     margin-top: 2rem;
 }
 #graph {
-    height: 200px;
+    height: 400px;
     width: 100%;
 }
 #graph img {
@@ -85,3 +88,47 @@
         margin: 2.5rem 0;
     }
 }
+#footer_site {
+    background: #f4ede5;
+    margin-top: 2.5rem;
+    padding: 2.5rem 0;
+    color: #49595e;
+    width: 100%;
+}
+hr {
+    position: relative;
+    background: url("/assets/img/skytrianglehr.svg") center center no-repeat;
+    background-size: 2em .625em;
+    border-top: 0;
+    border-color: #007d84;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    height: 10px;
+    width: 100%;
+}
+hr:before {
+    content: " ";
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: inherit;
+    position: absolute;
+    width: calc(50% - 26px);
+    top: 4px;
+    left: 0;
+}
+hr:after {
+    content: " ";
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: inherit;
+    position: absolute;
+    width: calc(50% - 26px);
+    top: 4px;
+    right: 0;
+}
+#footer_site hr:after, #footer_site hr:before {
+    border-color: #e2e9eb;
+}
+#footer_site a {
+    color: #49595e;
+    text-decoration: underline;
