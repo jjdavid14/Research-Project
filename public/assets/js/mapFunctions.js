@@ -394,7 +394,7 @@ function initMap() {
         markers.push(marker);
         // Create an onclick event to open the large infowindow at each marker.
         marker.addListener('click', function() {
-            var userInfo = JSON.stringify(users[this.id - 1], null, 4);
+            var userInfo = JSON.stringify(users[this.id], null, 4);
             focusOnMarker(this, userInfo);
         });
         // Two event listeners - one for mouseover, one for mouseout,
@@ -501,13 +501,13 @@ function populateContent(obj) {
     var esiColor;
     switch(data.esi) {
         case 1:
-            esiColor = "bg-danger";
+            esiColor = "table-danger";
             break;
         case 2:
-            esiColor = "bg-warning";
+            esiColor = "table-warning";
             break;
         case 3:
-            esiColor = "bg-success";
+            esiColor = "table-success";
             break;
     }
 
