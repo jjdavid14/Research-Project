@@ -41,7 +41,7 @@
     display: none;
 }
 .info-window {
-    width: 300px;
+    width: 100%;
 }
 /*#back {
     position: absolute;

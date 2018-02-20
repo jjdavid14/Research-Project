@@ -16,6 +16,8 @@ function loadUsers() {
             });
         }
 
+        console.log(locations);
+
         users = data.points;
         initMap();
 
@@ -364,8 +366,9 @@ function initMap() {
     for (var i = 0; i < locations.length; i++) {
         // Get the position from the location array.
         var position = locations[i].location;
-        var userInfo = JSON.stringify(users[i], null, 4);
         var defaultIcon;
+
+        console.log(position);
 
         // Determine the color of our markers.
         switch (users[i].esi) {
@@ -391,11 +394,15 @@ function initMap() {
         markers.push(marker);
         // Create an onclick event to open the large infowindow at each marker.
         marker.addListener('click', function() {
+            var userInfo = JSON.stringify(users[this.id - 1], null, 4);
             focusOnMarker(this, userInfo);
         });
         // Two event listeners - one for mouseover, one for mouseout,
         // to show the info window back and forth.
         marker.addListener('mouseover', function() {
+            // largeInfowindow.close();
+            // largeInfowindow.marker = null;
+            var userInfo = JSON.stringify(users[this.id], null, 4);
             populateInfoWindow(this, largeInfowindow, userInfo);
         });
         marker.addListener('mouseout', function() {
@@ -456,32 +463,75 @@ function makeMarkerIcon(markerColor) {
 function populateContent(obj) {
     var data = JSON.parse(obj);
 
-    var content  = "<div class='container info-window'>";
-        // First Row
-        content += "<div class='row'>";
-        // First Col
-        content += "<div class='col-6'>"
-        content += "<p>ESI: " + data.esi + "</p></div>";
-        // End First Col
-        // Second Col
-        content += "<div class='col-6'>"
-        content += "<p>HR: " + data.hr + "</p></div>";
-        // End Second Col
-        content += "</div>";
-        // End First Row
+    // var content  = "<div class='container info-window'>";
+    //     content += "<div class='row'>";
+    //     // First Col
+    //     content += "<div class='col-12'>"
+    //     content += "<p class='my-2 text-center'>ESI: " + data.esi + "</p></div>";
+    //     // End First Col
+    //     content += "</div>";
+    //     // End First Row
 
-        // Second Row
-        content += "<div class='row'>";
-        // First Col
-        content += "<div class='col-6'>"
-        content += "<p>SPO2: " + data.spo2 + "</p></div>";
-        // End First Col
-        // Second Col
-        content += "<div class='col-6'>"
-        content += "<p>RESP: " + data.resp + "</p></div>";
-        // End Second Col
-        content += "</div>";
-        // End Second Row
+    //     // Second Row
+    //     content += "<div class='row'>";
+    //     // First Col
+    //     content += "<div class='col-6'>"
+    //     content += "<p class='my-2 text-center'>TEMP: " + data.temp + "</p></div>";
+    //     // End First Col
+    //     // Second Col
+    //     content += "<div class='col-6'>"
+    //     content += "<p class='my-2 text-center'>HR: " + data.hr + "</p></div>";
+    //     // End Second Col
+    //     content += "</div>";
+    //     // End Second Row
+
+    //     // Third Row
+    //     content += "<div class='row'>";
+    //     // First Col
+    //     content += "<div class='col-6'>"
+    //     content += "<p class='my-2 text-center'>SPO2: " + data.spo2 + "</p></div>";
+    //     // End First Col
+    //     // Second Col
+    //     content += "<div class='col-6'>"
+    //     content += "<p class='my-2 text-center'>RESP: " + data.resp + "</p></div>";
+    //     // End Second Col
+    //     content += "</div>";
+    //     // End Third Row
+
+    var esiColor;
+    switch(data.esi) {
+        case 1:
+            esiColor = "bg-danger";
+            break;
+        case 2:
+            esiColor = "bg-warning";
+            break;
+        case 3:
+            esiColor = "bg-success";
+            break;
+    }
+
+    var content = '<table class="table table-bordered mt-3">\
+  <tbody>\
+    <tr class=' + esiColor + '>\
+      <th scope="row">ESI</th>\
+      <td colspan="3">' + data.esi + '</td>\
+    </tr>\
+  <tbody>\
+    <tr>\
+      <th scope="row">TEMP</th>\
+      <td>' + data.temp + ' °F</td>\
+      <th>HR</th>\
+      <td>' + data.hr + ' BPM</td>\
+    </tr>\
+    <tr>\
+      <th scope="row">SPO2</th>\
+      <td>' + data.spo2 + ' %</td>\
+      <th>RESP</th>\
+      <td>' + data.resp + ' RPM</td>\
+    </tr>\
+  </tbody>\
+</table>';
 
     return content;
 }

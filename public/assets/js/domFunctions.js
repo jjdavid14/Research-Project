@@ -48,17 +48,12 @@ function populateInfo(obj) {
 function objToHtml(obj) {
     var data = JSON.parse(obj);
 
-    var content  = "<div class='container mt-3'>";
-        // First Row
+    var content  = "<div class='container info-window py-4'>";
         content += "<div class='row'>";
         // First Col
-        content += "<div class='col-6'>"
-        content += "<p>ESI: " + data.esi + "</p></div>";
+        content += "<div class='col-12'>"
+        content += "<p class='my-2 text-center'>ESI: " + data.esi + "</p></div>";
         // End First Col
-        // Second Col
-        content += "<div class='col-6'>"
-        content += "<p>HR: " + data.hr + "</p></div>";
-        // End Second Col
         content += "</div>";
         // End First Row
 
@@ -66,14 +61,27 @@ function objToHtml(obj) {
         content += "<div class='row'>";
         // First Col
         content += "<div class='col-6'>"
-        content += "<p>SPO2: " + data.spo2 + "</p></div>";
+        content += "<p class='my-2 text-center'>TEMP: " + data.temp + " °F</p></div>";
         // End First Col
         // Second Col
         content += "<div class='col-6'>"
-        content += "<p>RESP: " + data.resp + "</p></div>";
+        content += "<p class='my-2 text-center'>HR: " + data.hr + " BPM</p></div>";
         // End Second Col
         content += "</div>";
         // End Second Row
+
+        // Third Row
+        content += "<div class='row'>";
+        // First Col
+        content += "<div class='col-6'>"
+        content += "<p class='my-2 text-center'>SPO2: " + data.spo2 + " %</p></div>";
+        // End First Col
+        // Second Col
+        content += "<div class='col-6'>"
+        content += "<p class='my-2 text-center'>RESP: " + data.resp + " RPM</p></div>";
+        // End Second Col
+        content += "</div>";
+        // End Third Row
 
     return content;
 }
