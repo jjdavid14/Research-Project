@@ -7,16 +7,16 @@ function loadUsers() {
 
         console.log(data);
 
-        for (var i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.points.length; i++) {
             locations.push({
                 location: {
-                    lat: data[i].location[0],
-                    lng: data[i].location[1]
+                    lat: data.points[i].location[0],
+                    lng: data.points[i].location[1]
                 }
             });
         }
 
-        users = data;
+        users = data.points;
         initMap();
 
     });
@@ -364,7 +364,7 @@ function initMap() {
     for (var i = 0; i < locations.length; i++) {
         // Get the position from the location array.
         var position = locations[i].location;
-        var title = JSON.stringify(users[i], null, 4);
+        var userInfo = JSON.stringify(users[i], null, 4);
         var defaultIcon;
 
         // Determine the color of our markers.
@@ -383,7 +383,6 @@ function initMap() {
         // Create a marker per location, and put into markers array.
         var marker = new google.maps.Marker({
             position: position,
-            title: title,
             animation: google.maps.Animation.DROP,
             icon: defaultIcon,
             id: i
@@ -392,12 +391,12 @@ function initMap() {
         markers.push(marker);
         // Create an onclick event to open the large infowindow at each marker.
         marker.addListener('click', function() {
-            focusOnMarker(this);
+            focusOnMarker(this, userInfo);
         });
         // Two event listeners - one for mouseover, one for mouseout,
         // to show the info window back and forth.
         marker.addListener('mouseover', function() {
-            populateInfoWindow(this, largeInfowindow);
+            populateInfoWindow(this, largeInfowindow, userInfo);
         });
         marker.addListener('mouseout', function() {
             largeInfowindow.close();
@@ -411,11 +410,11 @@ function initMap() {
 // This function populates the infowindow when the marker is clicked. We'll only allow
 // one infowindow which will open at the marker that is clicked, and populate based
 // on that markers position.
-function populateInfoWindow(marker, infowindow) {
+function populateInfoWindow(marker, infowindow, userInfo) {
     // Check to make sure the infowindow is not already opened on this marker.
     if (infowindow.marker != marker) {
         infowindow.marker = marker;
-        infowindow.setContent(populateContent(marker.title));
+        infowindow.setContent(populateContent(userInfo));
         infowindow.open(map, marker);
         // Make sure the marker property is cleared if the infowindow is closed.
         infowindow.addListener('closeclick', function() {

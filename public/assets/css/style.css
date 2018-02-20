@@ -4,16 +4,12 @@
      margin: 0;
      padding: 0;
 }
- .container {
-     height: 100%;
-     position: relative;
-}
  input {
      font-size: 12px;
 }
  .full-map {
-     bottom:0px;
-     height: 100%;
+     top:0px;
+     height: 500px;
      width: 100%;
     /* left: 362px;
     */
@@ -44,8 +40,48 @@
 .info-window {
     width: 300px;
 }
-#back {
+/*#back {
     position: absolute;
     left: 0;
     bottom: 100px;
+}*/
+.cs-logo-image {
+    vertical-align: bottom;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* UA Bootstrap */
+.page-row {
+    display: table-row;
+    min-height: 1px;
+}
+.header__logo {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 24px 0;
+    margin: 1.5rem 0;
+    padding: 0;
+}
+.bg-cochineal-red, .bg-red {
+    background-color: #ab0520;
+}
+.arizona-logo {
+    display: inline-block;
+    height: 20px;
+    margin: 19px 0 20px;
+    max-width: 80%;
+    float: left;
+    width: 276px;
+    padding: 0 0 0 .6rem;
+}
+@media (min-width: 48em) {
+    .header__logo {
+        width: auto;
+        text-align: left;
+        margin: 40px 0;
+        margin: 2.5rem 0;
+    }
 }

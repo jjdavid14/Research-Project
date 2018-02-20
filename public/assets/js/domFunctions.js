@@ -10,12 +10,12 @@ $("#back").on('click', function() {
 // Hides the full map and focuses on the details
 // of a single marker by displaying its own data
 // and isolating itself on the map
-function focusOnMarker(marker) {
+function focusOnMarker(marker, userInfo) {
 	$("#main").addClass("hide");
 	$("#sub").removeClass("hide");
 	$("#back").removeClass("hide");
 
-	populateInfo(marker.title);
+	populateInfo(userInfo);
 	moveMap(marker);
 }
 
