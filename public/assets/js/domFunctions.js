@@ -26,7 +26,10 @@ function moveMap(marker) {
 	$(".small-map").attr("id", "map");
 	initMap();
 	hideListings();
-	marker.setMap(map);
+
+    marker.setMap(map);
+    map.setZoom(15);
+    map.setCenter(marker.position);
 }
 
 // This functions restores the full page map

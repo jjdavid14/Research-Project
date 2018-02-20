@@ -394,21 +394,23 @@ function initMap() {
         markers.push(marker);
         // Create an onclick event to open the large infowindow at each marker.
         marker.addListener('click', function() {
+            largeInfowindow.close();
+            largeInfowindow.marker = null;
             var userInfo = JSON.stringify(users[this.id], null, 4);
             focusOnMarker(this, userInfo);
         });
         // Two event listeners - one for mouseover, one for mouseout,
         // to show the info window back and forth.
         marker.addListener('mouseover', function() {
-            // largeInfowindow.close();
-            // largeInfowindow.marker = null;
+            largeInfowindow.close();
+            largeInfowindow.marker = null;
             var userInfo = JSON.stringify(users[this.id], null, 4);
             populateInfoWindow(this, largeInfowindow, userInfo);
         });
-        marker.addListener('mouseout', function() {
-            largeInfowindow.close();
-            largeInfowindow.marker = null;
-        });
+        // marker.addListener('mouseout', function() {
+        //     largeInfowindow.close();
+        //     largeInfowindow.marker = null;
+        // });
     }
     //document.getElementById('show-listings').addEventListener('click', showCustomMapStyle);
     //document.getElementById('hide-listings').addEventListener('click', hideCustomMapStyle);
