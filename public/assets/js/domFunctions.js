@@ -19,6 +19,7 @@ function focusOnMarker(marker, userInfo) {
 
 	populateInfo(userInfo);
 	moveMap(marker);
+    // Add a function to change the bpm in ecgFunctions.js based on the userInfo's HR
 }
 
 // This function redraws the map to the container

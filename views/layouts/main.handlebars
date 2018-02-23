@@ -11,6 +11,8 @@
  -->		
  		<!-- Font Awesome Icons -->
  		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+ 		<!-- ECG from joakimkemeny -->
+ 		<link rel="stylesheet" href="/assets/js/bower_components/jke-d3-ecg/dist/jke-d3-ecg.css">
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -65,6 +67,21 @@
 				</div>
 			</div>
 		</footer>
+		<!-- ECG dependencies -->
+		<script src="/assets/js/bower_components/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
+		<script src="/assets/js/bower_components/d3/d3.min.js"></script>
+
+		<!-- Include jke-d3-ecg and initialize the chart -->
+		<script src="/assets/js/bower_components/jke-d3-ecg/dist/jke-d3-ecg.min.js"></script>
+		<script>
+			$('.jke-ecgChart').ecgChart({
+				
+				height: 300,
+				width: 1110
+			
+			});
+		</script>
+		<script src="/assets/js/ecgFunctions.js"></script>
 		<!-- Custom Files -->
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 		<script src="/assets/js/mapFunctions.js"></script>

@@ -30,7 +30,7 @@
     margin-top: 2rem;
 }
 #graph {
-    height: 400px;
+    /*height: 400px;*/
     width: 100%;
 }
 #graph img {
@@ -132,3 +132,9 @@ hr:after {
 #footer_site a {
     color: #49595e;
     text-decoration: underline;
+}
+
+/* ECG Styles */
+.jke-ecgChart-line {
+    stroke: #dc3545;
+}
