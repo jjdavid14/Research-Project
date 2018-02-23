@@ -4,7 +4,9 @@ $("#back").on('click', function() {
 	$("#sub").addClass("hide");
 	$("#back").addClass("hide");
 	$("#main").removeClass("hide");
-	restoreMap();
+    // Redirect back to home page
+    window.location.href = "/";
+	//restoreMap();
 });
 
 // Hides the full map and focuses on the details
@@ -55,7 +57,7 @@ function objToHtml(obj) {
         content += "<div class='row'>";
         // First Col
         content += "<div class='col-12'>"
-        content += "<p class='my-2 text-center'>ESI: " + data.esi + "</p></div>";
+        content += "<p class='my-2 text-center'><i class='fas fa-user-md'></i> ESI: " + data.esi + "</p></div>";
         // End First Col
         content += "</div>";
         // End First Row
@@ -64,11 +66,11 @@ function objToHtml(obj) {
         content += "<div class='row'>";
         // First Col
         content += "<div class='col-6'>"
-        content += "<p class='my-2 text-center'>TEMP: " + data.temp + " °F</p></div>";
+        content += "<p class='my-2 text-center'><i class='fas fa-thermometer-empty'></i> TEMP: " + data.temp + " °F</p></div>";
         // End First Col
         // Second Col
         content += "<div class='col-6'>"
-        content += "<p class='my-2 text-center'>HR: " + data.hr + " BPM</p></div>";
+        content += "<p class='my-2 text-center'><i class='fas fa-heartbeat'></i> HR: " + data.hr + " BPM</p></div>";
         // End Second Col
         content += "</div>";
         // End Second Row
@@ -77,11 +79,11 @@ function objToHtml(obj) {
         content += "<div class='row'>";
         // First Col
         content += "<div class='col-6'>"
-        content += "<p class='my-2 text-center'>SPO2: " + data.spo2 + " %</p></div>";
+        content += "<p class='my-2 text-center'><i class='fab fa-cloudsmith'></i> SPO2: " + data.spo2 + " %</p></div>";
         // End First Col
         // Second Col
         content += "<div class='col-6'>"
-        content += "<p class='my-2 text-center'>RESP: " + data.resp + " RPM</p></div>";
+        content += "<p class='my-2 text-center'><i class='fas fa-stethoscope'></i> RESP: " + data.resp + " RPM</p></div>";
         // End Second Col
         content += "</div>";
         // End Third Row

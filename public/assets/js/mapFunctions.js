@@ -402,6 +402,8 @@ function initMap() {
         // Two event listeners - one for mouseover, one for mouseout,
         // to show the info window back and forth.
         marker.addListener('mouseover', function() {
+            console.log("hovered");
+            console.log(largeInfowindow);
             largeInfowindow.close();
             largeInfowindow.marker = null;
             var userInfo = JSON.stringify(users[this.id], null, 4);
