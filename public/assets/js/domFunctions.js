@@ -19,7 +19,6 @@ function focusOnMarker(marker, userInfo) {
 
 	populateInfo(userInfo);
 	moveMap(marker);
-    // Add a function to change the bpm in ecgFunctions.js based on the userInfo's HR
 }
 
 // This function redraws the map to the container
@@ -53,6 +52,7 @@ function populateInfo(obj) {
 // This function creates the html content for the info
 function objToHtml(obj) {
     var data = JSON.parse(obj);
+    //initHeartRate(data.hr);
 
     var content  = "<div class='container info-window py-4'>";
         content += "<div class='row'>";

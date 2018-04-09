@@ -1,3 +1,4 @@
+// Potential (mV)
 var _data = [
 	0, 0, 0, 0, 0.0000050048828125, 0.0000137939453125, 0.000049560546875,
 	0.00008740234375, 0.00015966796875, 0.000262451171875, 0.0003975830078125, 0.0005687255859375,
@@ -35,10 +36,12 @@ var getDataPoint = (function () {
 	};
 })();
 
-var heartRate = 120; // bpm
-var interval = 60 * 1000 / (_data.length * heartRate);
+function initHeartRate(value) {
+	var heartRate = value; // bpm
+	var interval = 60 * 1000 / (_data.length * heartRate);
 
-// Generate a new data point based on the heart rate.
-setInterval(function () {
-	$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
-}, interval);
+	// Generate a new data point based on the heart rate.
+	setInterval(function () {
+		$('.jke-ecgChart').ecgChart('addDataPoint', getDataPoint());
+	}, interval);
+}

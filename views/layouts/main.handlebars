@@ -5,22 +5,63 @@
 		<title>Project</title>
 		
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<!-- UA Bootstrap CSS -->
-<!-- 		<link rel="stylesheet" type="text/css" href="https://cdn.uadigital.arizona.edu/lib/ua-bootstrap/latest/ua-bootstrap.min.css">
- -->		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	
  		<!-- Font Awesome Icons -->
  		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
- 		<!-- ECG from joakimkemeny -->
- 		<link rel="stylesheet" href="/assets/js/bower_components/jke-d3-ecg/dist/jke-d3-ecg.css">
+ 		<!-- Rickshaw styles -->
+ 		<link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+	  <link type="text/css" rel="stylesheet" href="/assets/css/graph.css">
+	  <link type="text/css" rel="stylesheet" href="/assets/css/detail.css">
+	  <link type="text/css" rel="stylesheet" href="/assets/css/legend.css">
+	  <link type="text/css" rel="stylesheet" href="/assets/css/extensions.css?v=2">
+	  <link type="text/css" rel="stylesheet" href="/assets/css/spinner.css">
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- PubNub JS -->
+		<script src="/assets/vendor/d3.v3.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	  <script>
+	    jQuery.noConflict();
+	  </script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+
+	  <script src="/assets/js/rickshaw/Rickshaw.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Class.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Compat.ClassList.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.Area.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.Line.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.Bar.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.ScatterPlot.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Renderer.Stack.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.RangeSlider.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.RangeSlider.Preview.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.HoverDetail.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Annotate.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Legend.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Axis.Time.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Behavior.Series.Toggle.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Behavior.Series.Order.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Behavior.Series.Highlight.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Smoother.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Fixtures.Time.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Fixtures.Time.Local.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Fixtures.Number.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Fixtures.Color.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Color.Palette.js"></script>
+	  <script src="/assets/js/rickshaw/Rickshaw.Graph.Axis.Y.js"></script>
+
+	  <script src="http://cdn.pubnub.com/pubnub.min.js"></script>
+	  <script src="/assets/js/Rickshaw.Fixtures.PubNub.js"></script>
+
+	  <script src="/assets/js/extensions.js"></script>
 	</head>
 	<body>
-		<header class="l-arizona-header bg-red bg-cochineal-red">
+		<header class="l-arizona-header bg-red bg-cochineal-red mb-4">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -31,59 +72,13 @@
 				</div>
 			</div>
 		</header>
-		<header class="header">
-			<div class="container my-4">
-				<a href="/">
-					<img src="/assets/img/computer_science_web_header_artwork_v2.png" class="cs-logo-image" alt="CS Home">
-				</a>
-			</div>
-		</header>
-		{{{ body }}}
-		<footer id="footer_site">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 col-sm-5 col-md-4 col-lg-4 text-sm-center text-left">
-						<a href="/">
-							<img src="/assets/img/ua_college_sci_primary.png" alt="ua college science" style="max-width: 100%;">
-						</a>
-					</div>
-					<div class="col-12 col-sm-7 col-md-8 col-lg-8">
-						<div class="text-right" style="font-size: 13px;">Gould-Simpson 917</div>
-						<div class="text-right" style="font-size: 13px;">1040 E. 4th Street, P.O. Box 210077, Tucson AZ 85721</div>
-						<div class="text-right" style="font-size: 5px;">&nbsp;</div>
-						<div class="text-right" style="font-size: 13px;">Ofc: 520-621-4632</div>
-						<div class="text-right" style="font-size: 13px;">Fax: 520-621-0308</div>
-					</div>
-					<div class="col-12">
-						<hr>
-					</div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-12 text-center">
-						<p>© 2018 The Arizona Board of Regents on behalf of <a href="https://www.arizona.edu" target="_blank">The University of Arizona</a></p>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- ECG dependencies -->
-		<script src="/assets/js/bower_components/jquery-ui/ui/minified/jquery.ui.widget.min.js"></script>
-		<script src="/assets/js/bower_components/d3/d3.min.js"></script>
 
-		<!-- Include jke-d3-ecg and initialize the chart -->
-		<script src="/assets/js/bower_components/jke-d3-ecg/dist/jke-d3-ecg.min.js"></script>
-		<script>
-			$('.jke-ecgChart').ecgChart({
-				
-				height: 300,
-				width: 1110
-			
-			});
-		</script>
-		<script src="/assets/js/ecgFunctions.js"></script>
+		{{{ body }}}
+		
+
 		<!-- Custom Files -->
 		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+		<script src="/assets/js/pubnub.js"></script>
 		<script src="/assets/js/mapFunctions.js"></script>
 		<script src="/assets/js/domFunctions.js"></script>
 
