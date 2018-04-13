@@ -12,12 +12,10 @@
 }
  .full-map {
      top:0px;
-     height: 500px;
-     width: 100%;
-    /* left: 362px;
-    */
+     height: 85vh;
+     width: 100vw;
+     left: 0;
      position: absolute;
-     right: 0px;
 }
  .small-map,
  .info {
