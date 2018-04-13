@@ -32,6 +32,7 @@ function moveMap(marker) {
     marker.setMap(map);
     map.setZoom(15);
     map.setCenter(marker.position);
+    google.maps.event.clearInstanceListeners(marker);
 }
 
 // This functions restores the full page map

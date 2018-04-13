@@ -467,41 +467,6 @@ function makeMarkerIcon(markerColor) {
 function populateContent(obj) {
     var data = JSON.parse(obj);
 
-    // var content  = "<div class='container info-window'>";
-    //     content += "<div class='row'>";
-    //     // First Col
-    //     content += "<div class='col-12'>"
-    //     content += "<p class='my-2 text-center'>ESI: " + data.esi + "</p></div>";
-    //     // End First Col
-    //     content += "</div>";
-    //     // End First Row
-
-    //     // Second Row
-    //     content += "<div class='row'>";
-    //     // First Col
-    //     content += "<div class='col-6'>"
-    //     content += "<p class='my-2 text-center'>TEMP: " + data.temp + "</p></div>";
-    //     // End First Col
-    //     // Second Col
-    //     content += "<div class='col-6'>"
-    //     content += "<p class='my-2 text-center'>HR: " + data.hr + "</p></div>";
-    //     // End Second Col
-    //     content += "</div>";
-    //     // End Second Row
-
-    //     // Third Row
-    //     content += "<div class='row'>";
-    //     // First Col
-    //     content += "<div class='col-6'>"
-    //     content += "<p class='my-2 text-center'>SPO2: " + data.spo2 + "</p></div>";
-    //     // End First Col
-    //     // Second Col
-    //     content += "<div class='col-6'>"
-    //     content += "<p class='my-2 text-center'>RESP: " + data.resp + "</p></div>";
-    //     // End Second Col
-    //     content += "</div>";
-    //     // End Third Row
-
     var esiColor;
     switch(data.esi) {
         case 1:
