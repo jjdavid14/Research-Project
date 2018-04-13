@@ -51,14 +51,31 @@ function populateInfo(obj) {
 
 // This function creates the html content for the info
 function objToHtml(obj) {
+    // Determine the color of our markers.
+    let color = "text-body"
+    let greenIcon = ('00ff00');
+    let yellowIcon = ('FFFF24');
+    let redIcon = ('FF0000');
+   
     var data = JSON.parse(obj);
-    //initHeartRate(data.hr);
+
+     switch (data.esi) {
+        case 1:
+            color = "text-danger";
+            break;
+        case 2:
+            color = "text-warning";
+            break;
+        case 3:
+            color = "text-success";
+            break;
+    }
 
     var content  = "<div class='container info-window py-4'>";
         content += "<div class='row'>";
         // First Col
         content += "<div class='col-12'>"
-        content += "<p class='my-2 text-center'><i class='fas fa-user-md'></i> ESI: " + data.esi + "</p></div>";
+        content += "<h3 class='my-2 text-center " + color + "'><i class='fas fa-user-md'></i> ESI: " + data.esi + "</h3></div>";
         // End First Col
         content += "</div>";
         // End First Row
