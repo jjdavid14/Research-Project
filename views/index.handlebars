@@ -11,6 +11,29 @@
 			<div id="content">
 
 			  <div id="chart_container">
+				
+				<!-- Zoom buttons -->
+				<div class="gmnoprint" controlwidth="28" controlheight="55" style="position: absolute; right: 10px; top: 20px; z-index: 99">
+					<div draggable="false" style="user-select: none;box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;border-radius: 2px;cursor: pointer;background-color: #dee2e6;width: 28px;height: 55px;">
+						<button draggable="false" title="Zoom in" aria-label="Zoom in" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;">
+							<div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
+								<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: 0px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
+							</div>
+						</button>
+						<div style="position: relative; overflow: hidden; width: 67%; height: 1px; left: 16%; background-color: rgb(230, 230, 230); top: 0px;">
+						</div>
+						<button draggable="false" title="Zoom out" aria-label="Zoom out" type="button" style="background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: relative; cursor: pointer; user-select: none; width: 28px; height: 27px; top: 0px; left: 0px;">
+							<div style="overflow: hidden; position: absolute; width: 15px; height: 15px; left: 7px; top: 6px;">
+								<img alt="" src="https://maps.gstatic.com/mapfiles/api-3/images/tmapctrl_hdpi.png" draggable="false" style="position: absolute; left: 0px; top: -15px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; width: 120px; height: 54px;">
+							</div>
+						</button>
+					</div>
+				</div>
+
+				<!-- Axis Labels -->
+				<p style="position: absolute; bottom: 5px; width: 100%; text-align: center; color: #999;">Time (Seconds)</p>
+				<p style="position: absolute; left: -70px; top: 44%; transform: rotate(-90deg); color: #999;">Potential (mV)</p>
+
 			    <div id="chart">
 			      <div class="spinner" id="load">
 			        <div class="rect1"></div>
